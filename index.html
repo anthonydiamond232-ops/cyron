@@ -38,6 +38,28 @@
       overflow-x: hidden;
     }
 
+    /* Custom scrollbar for dark theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(5, 8, 22, 0.8);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(72, 215, 255, 0.3);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(72, 215, 255, 0.5);
+    }
+    /* Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(72, 215, 255, 0.3) rgba(5, 8, 22, 0.8);
+    }
+
     .bg {
       position: fixed;
       inset: 0;

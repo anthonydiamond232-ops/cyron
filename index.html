@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cyron builds and operates infrastructure systems for modern digital platforms." />
-  <title>Cyron | Infrastructure Systems</title>
+  <meta name="description" content="Automata — advanced automated trading system built to execute with precision, speed, and discipline." />
+  <title>Automata | Automated Trading Intelligence</title>
   <style>
     :root {
       --bg: #050816;
@@ -101,6 +101,22 @@
       display: block;
     }
 
+    .menu-icon {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
     nav a {
       color: var(--muted);
       text-decoration: none;
@@ -111,8 +127,42 @@
 
     nav a:hover { color: var(--text); }
 
+    @media (max-width: 960px) {
+      .menu-icon {
+        display: block;
+      }
+      nav {
+        position: fixed;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba(5, 8, 22, 0.98), rgba(8, 12, 26, 0.98));
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 19;
+      }
+      nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      nav a {
+        margin: 0;
+        font-size: 1.1rem;
+        padding: 8px;
+      }
+    }
+
     .hero {
-      padding: 88px 0 56px;
+      padding: 88px 0 20px;
       position: relative;
     }
 
@@ -258,19 +308,6 @@
 
     .card:hover::before { opacity: 1; }
 
-    .icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(72,215,255,0.18), rgba(55,125,255,0.10));
-      border: 1px solid rgba(117, 190, 255, 0.18);
-      margin-bottom: 18px;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
     .card h3 {
       margin: 0 0 12px;
       font-size: 1.2rem;
@@ -281,62 +318,6 @@
       color: var(--muted);
       line-height: 1.75;
       font-size: 0.95rem;
-    }
-
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .principle {
-      padding: 20px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .principle h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-    }
-
-    .principle p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .diff-list {
-      max-width: 700px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.03);
-      border-radius: 32px;
-      padding: 32px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .diff-list p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .diff-list ul {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      list-style: none;
-      padding: 0;
-    }
-
-    .diff-list li {
-      background: rgba(72,215,255,0.08);
-      padding: 8px 16px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(72,215,255,0.2);
     }
 
     .cta-block {
@@ -371,21 +352,29 @@
       text-align: center;
     }
 
+    .disclaimer {
+      opacity: 0.6;
+      font-size: 0.8rem;
+      margin-top: 20px;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     @media (max-width: 960px) {
-      .grid-4, .grid-3, .principles {
+      .grid-4, .grid-3 {
         grid-template-columns: repeat(2, 1fr);
       }
-      nav { display: none; }
       .hero { padding-top: 58px; }
     }
 
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, var(--max)); }
       .nav { min-height: 72px; }
-      .grid-4, .grid-3, .principles { grid-template-columns: 1fr; }
+      .grid-4, .grid-3 { grid-template-columns: 1fr; }
       .btn { width: 100%; }
       .actions { flex-direction: column; align-items: stretch; }
-      .diff-list { padding: 24px; }
     }
   </style>
 </head>
@@ -395,14 +384,14 @@
 
   <header>
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Cyron home">
-        <img class="brand-logo" src="assets/images/logo.png" alt="Cyron logo" />
+      <a class="brand" href="#home" aria-label="Automata home">
+        <img class="brand-logo" src="assets/images/logo.png" alt="Automata logo" />
       </a>
-      <nav aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#principles">Principles</a>
-        <a href="#why">Why Cyron</a>
-        <a href="#contact">Contact</a>
+      <button class="menu-icon" id="menuToggle" aria-label="Menu">☰</button>
+      <nav id="mainNav" aria-label="Primary">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#how">How It Works</a>
+        <a href="#early">Early Access</a>
       </nav>
     </div>
   </header>
@@ -411,101 +400,105 @@
     <div class="container">
       <section class="hero">
         <div class="hero-content">
-          <div class="eyebrow"><i></i> Infrastructure for systems that need to work</div>
-          <h1>Infrastructure for systems that need to work.</h1>
+          <div class="eyebrow"><i></i> Early Access • Automated Trading Intelligence</div>
+          <h1>AUTOMATA</h1>
           <p class="lead">
-            Cyron designs, builds, and operates core infrastructure systems for modern platforms.<br />
-            From architecture to deployment, we create reliable, scalable environments that support real-world applications at any level.
+            An advanced automated trading system built to execute with precision, speed, and discipline.<br/>
+            Designed to remove emotion, optimize entries, and operate continuously in live markets.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Start a Project</a>
-            <a class="btn btn-secondary" href="#services">View Infrastructure</a>
+            <a class="btn btn-primary" href="#early">Get Early Access</a>
+            <a class="btn btn-secondary" href="#how">How It Works</a>
           </div>
         </div>
       </section>
 
-      <section id="services">
+      <div style="text-align:center; margin-top:-20px; margin-bottom:40px;">
+        <img src="assets/images/automata.png" alt="Automata AI Trading System" style="max-width:320px; border-radius:20px; opacity:0.95;">
+      </div>
+
+      <section id="capabilities">
         <div class="section-title">
-          <h2>Core Infrastructure Services</h2>
-          <p>We focus on building the underlying systems that applications rely on. Every layer is engineered for performance, stability, and long-term operation.</p>
+          <h2>System Capabilities</h2>
+          <p>Automata is engineered to identify, execute, and manage trades with consistency and control.</p>
         </div>
         <div class="grid-4">
           <article class="card">
-            <div class="icon">◌</div>
-            <h3>Infrastructure Architecture</h3>
-            <p>We design system architectures that define how applications, services, and data interact. This includes structure, communication layers, and scalability planning.</p>
+            <h3>Signal Detection Engine</h3>
+            <p>Continuously analyzes market data to identify high-probability trading signals with minimal latency.</p>
           </article>
           <article class="card">
-            <div class="icon">▣</div>
-            <h3>Deployment Systems</h3>
-            <p>We build deployment pipelines and environments that allow systems to be launched, updated, and maintained efficiently.</p>
+            <h3>Automated Trade Execution</h3>
+            <p>Executes trades instantly based on predefined logic — no manual intervention, no hesitation.</p>
           </article>
           <article class="card">
-            <div class="icon">◈</div>
-            <h3>System Reliability</h3>
-            <p>We ensure systems remain stable under load through monitoring, optimization, and performance tuning.</p>
+            <h3>Risk Control System</h3>
+            <p>Manages position sizing, stop losses, and exposure to protect capital in volatile conditions.</p>
           </article>
           <article class="card">
-            <div class="icon">⨀</div>
-            <h3>Platform Foundations</h3>
-            <p>We create the base infrastructure for platforms, including backend systems, integrations, and operational layers.</p>
+            <h3>Market Adaptation Logic</h3>
+            <p>Adjusts strategy parameters dynamically to align with current market regimes and volatility.</p>
           </article>
         </div>
       </section>
 
-      <section id="principles">
+      <section id="how">
         <div class="section-title">
-          <h2>Built on Infrastructure Principles</h2>
-          <p>Infrastructure is not visible to users, but everything depends on it. Our approach focuses on creating systems that are dependable, connected, and built to scale.</p>
+          <h2>How Automata Works</h2>
+          <p>A fully automated pipeline from signal detection to execution.</p>
         </div>
-        <div class="principles">
-          <div class="principle">
-            <h3>Foundation</h3>
-            <p>Every system starts with a stable base that supports all operations without failure.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>1. Market Analysis</h3>
+            <p>Continuously scans price action and volatility patterns to identify high-probability setups.</p>
           </div>
-          <div class="principle">
-            <h3>Interconnection</h3>
-            <p>Systems are designed to communicate seamlessly, ensuring efficient data flow and integration.</p>
+          <div class="card">
+            <h3>2. Decision Engine</h3>
+            <p>Filters signals using precision thresholds and confidence scoring.</p>
           </div>
-          <div class="principle">
-            <h3>Scalability</h3>
-            <p>Infrastructure is built to handle growth, adapting to increased demand without loss of performance.</p>
+          <div class="card">
+            <h3>3. Execution</h3>
+            <p>Places trades instantly based on defined logic — no delay, no emotion.</p>
           </div>
         </div>
       </section>
 
-      <section id="why">
-        <div class="section-title">
-          <h2>Why Cyron</h2>
-          <p>We approach infrastructure as a core system, not an afterthought. Our focus is on building environments that are structured, maintainable, and ready for real-world usage.</p>
-        </div>
-        <div class="diff-list">
-          <p>We prioritize:</p>
-          <ul>
-            <li>Clean and scalable system design</li>
-            <li>Reliable performance under load</li>
-            <li>Long-term maintainability</li>
-            <li>Clear architecture and control</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="contact">
+      <section id="early">
         <div class="cta-block">
-          <h2>Build on a stronger foundation.</h2>
-          <p>Whether you are launching a new system or improving an existing one, Cyron provides the infrastructure required to support it.</p>
-          <a class="btn btn-primary" href="mailto:hello@cyron.com">Start a Project</a>
+          <h2>Get Early Access to Automata</h2>
+          <p>
+            Automata is currently in early access. Limited slots are available for initial users.<br/>
+            Join now to test and experience the system before public release.
+          </p>
+          <a class="btn btn-primary" href="#">Join Early Access</a>
         </div>
       </section>
 
       <footer>
-        © <span id="year"></span> Cyron. Infrastructure by design.
+        © <span id="year"></span> Automata. Automated trading intelligence.
+        <div class="disclaimer">
+          Automata is a tool for automated trading. It does not guarantee profits. Trading involves risk.
+        </div>
       </footer>
     </div>
   </main>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+        });
+      });
+    }
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cyron — premium infrastructure systems for modern digital operations." />
+  <meta name="description" content="Cyron builds and operates infrastructure systems for modern digital platforms." />
   <title>Cyron | Infrastructure Systems</title>
   <style>
     :root {
@@ -36,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* Premium infrastructure grid */
     .bg {
       position: fixed;
       inset: 0;
@@ -97,7 +96,7 @@
     }
 
     .brand-logo {
-      height: 44px;
+      height: 48px;
       width: auto;
       display: block;
     }
@@ -117,11 +116,10 @@
       position: relative;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: center;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .eyebrow {
@@ -152,7 +150,9 @@
       font-size: clamp(3rem, 6vw, 5.8rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
-      max-width: 11ch;
+      max-width: 12ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .lead {
@@ -160,14 +160,14 @@
       color: var(--muted);
       font-size: 1.08rem;
       line-height: 1.8;
-      margin-bottom: 30px;
+      margin: 0 auto 30px;
     }
 
     .actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: center;
     }
 
     .btn {
@@ -198,70 +198,53 @@
       border-color: rgba(255,255,255,0.10);
     }
 
-    .hero-card {
-      position: relative;
-      min-height: 520px;
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(72,215,255,0.18), transparent 24%),
-        linear-gradient(180deg, rgba(8, 14, 32, 0.88), rgba(9, 15, 34, 0.62));
-      border: 1px solid rgba(255,255,255,0.09);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      isolation: isolate;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 20px;
-      display: block;
-    }
-
     section {
       padding: 22px 0 70px;
     }
 
     .section-title {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 22px;
+      text-align: center;
+      margin-bottom: 42px;
     }
 
     .section-title h2 {
-      margin: 0;
+      margin: 0 0 12px;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       letter-spacing: -0.04em;
     }
 
     .section-title p {
-      margin: 0;
+      margin: 0 auto;
       max-width: 60ch;
       color: var(--muted);
       line-height: 1.7;
     }
 
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .card {
-      padding: 22px;
+      padding: 24px;
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(12, 18, 40, 0.84), rgba(8, 12, 26, 0.8));
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 18px 40px rgba(0,0,0,0.25);
       position: relative;
       overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
     }
 
     .card::before {
@@ -283,126 +266,126 @@
       place-items: center;
       background: linear-gradient(135deg, rgba(72,215,255,0.18), rgba(55,125,255,0.10));
       border: 1px solid rgba(117, 190, 255, 0.18);
-      margin-bottom: 16px;
-      font-size: 1.3rem;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+      font-weight: 600;
     }
 
     .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.16rem;
+      margin: 0 0 12px;
+      font-size: 1.2rem;
     }
 
     .card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.75;
+      font-size: 0.95rem;
     }
 
-    .concept {
+    .principles {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
     }
 
-    .concept-box {
-      min-height: 280px;
-      padding: 26px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(10, 16, 36, 0.86), rgba(8, 12, 24, 0.74));
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .concept-box .tag {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      color: rgba(230, 240, 255, 0.84);
-      font-size: 0.84rem;
-      margin-bottom: 14px;
-    }
-
-    .concept-box ul {
-      padding-left: 18px;
-      margin: 16px 0 0;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border-radius: 20px;
+    .principle {
+      padding: 20px;
+      border-radius: 24px;
       background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .step .badge {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      background: linear-gradient(135deg, rgba(72,215,255,0.18), rgba(55,125,255,0.08));
-      border: 1px solid rgba(120, 190, 255, 0.18);
+    .principle h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
-    .step h4 { margin: 2px 0 6px; }
-    .step p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .principle p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
 
-    .cta {
+    .diff-list {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.03);
+      border-radius: 32px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .diff-list p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .diff-list ul {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .diff-list li {
+      background: rgba(72,215,255,0.08);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(72,215,255,0.2);
+    }
+
+    .cta-block {
       margin: 20px 0 72px;
-      padding: 30px;
-      border-radius: 30px;
+      padding: 48px 32px;
+      border-radius: 32px;
       border: 1px solid rgba(255,255,255,0.08);
       background:
         radial-gradient(circle at 15% 20%, rgba(72,215,255,0.18), transparent 20%),
         radial-gradient(circle at 85% 30%, rgba(126,92,255,0.14), transparent 18%),
         linear-gradient(180deg, rgba(12, 18, 40, 0.88), rgba(8, 12, 24, 0.82));
       box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      text-align: center;
     }
 
-    .cta h2 { margin: 0 0 8px; }
-    .cta p { margin: 0; color: var(--muted); max-width: 62ch; line-height: 1.75; }
+    .cta-block h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin: 0 0 16px;
+    }
+
+    .cta-block p {
+      max-width: 60ch;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
 
     footer {
       padding: 18px 0 40px;
       color: rgba(220, 230, 255, 0.52);
       font-size: 0.95rem;
+      text-align: center;
     }
 
     @media (max-width: 960px) {
-      .hero-grid, .grid-3, .concept, .cta { grid-template-columns: 1fr; display: grid; }
-      .hero { padding-top: 58px; }
-      h1 { max-width: 12ch; }
+      .grid-4, .grid-3, .principles {
+        grid-template-columns: repeat(2, 1fr);
+      }
       nav { display: none; }
-      .hero-card { min-height: auto; padding: 24px; }
-      .section-title { flex-direction: column; align-items: start; }
+      .hero { padding-top: 58px; }
     }
 
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, var(--max)); }
       .nav { min-height: 72px; }
-      .hero { padding-bottom: 34px; }
-      .card, .concept-box, .cta { border-radius: 22px; }
+      .grid-4, .grid-3, .principles { grid-template-columns: 1fr; }
       .btn { width: 100%; }
       .actions { flex-direction: column; align-items: stretch; }
+      .diff-list { padding: 24px; }
     }
   </style>
 </head>
@@ -417,120 +400,108 @@
       </a>
       <nav aria-label="Primary">
         <a href="#services">Services</a>
-        <a href="#concept">Concept</a>
+        <a href="#principles">Principles</a>
+        <a href="#why">Why Cyron</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="home" class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow"><i></i> Infrastructure systems for modern scale</div>
-          <h1>Build the backbone of what comes next.</h1>
+  <main id="home">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow"><i></i> Infrastructure for systems that need to work</div>
+          <h1>Infrastructure for systems that need to work.</h1>
           <p class="lead">
-            Cyron is presented as a premium infrastructure brand: secure, scalable, precise, and built to carry serious digital workloads.
-            The visual language uses dark glass panels, network lines, and a geometric core to reflect reliability and engineering depth.
+            Cyron designs, builds, and operates core infrastructure systems for modern platforms.<br />
+            From architecture to deployment, we create reliable, scalable environments that support real-world applications at any level.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Start a project</a>
-            <a class="btn btn-secondary" href="#concept">See the concept</a>
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn btn-secondary" href="#services">View Infrastructure</a>
           </div>
         </div>
+      </section>
 
-        <div class="hero-card" aria-label="Cyron hero graphic">
-          <img src="assets/images/hero.png" alt="Cyron hero title" />
+      <section id="services">
+        <div class="section-title">
+          <h2>Core Infrastructure Services</h2>
+          <p>We focus on building the underlying systems that applications rely on. Every layer is engineered for performance, stability, and long-term operation.</p>
         </div>
-      </div>
-    </section>
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">◌</div>
+            <h3>Infrastructure Architecture</h3>
+            <p>We design system architectures that define how applications, services, and data interact. This includes structure, communication layers, and scalability planning.</p>
+          </article>
+          <article class="card">
+            <div class="icon">▣</div>
+            <h3>Deployment Systems</h3>
+            <p>We build deployment pipelines and environments that allow systems to be launched, updated, and maintained efficiently.</p>
+          </article>
+          <article class="card">
+            <div class="icon">◈</div>
+            <h3>System Reliability</h3>
+            <p>We ensure systems remain stable under load through monitoring, optimization, and performance tuning.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⨀</div>
+            <h3>Platform Foundations</h3>
+            <p>We create the base infrastructure for platforms, including backend systems, integrations, and operational layers.</p>
+          </article>
+        </div>
+      </section>
 
-    <section id="services">
-      <div class="section-title">
-        <h2>What Cyron should feel like</h2>
-        <p>For an infrastructure shop, the “real” concept is not a random tech look. It is a visual system inspired by networks, load-bearing structures, control layers, and secure data pathways.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <div class="icon">◌</div>
-          <h3>Network topology</h3>
-          <p>Use nodes, connecting lines, routing paths, and orbit rings to suggest scale, connectivity, and data flow.</p>
-        </article>
-        <article class="card">
-          <div class="icon">▣</div>
-          <h3>Load-bearing structure</h3>
-          <p>Use grids, frames, columns, and modular panels to communicate stability, engineering, and architectural strength.</p>
-        </article>
-        <article class="card">
-          <div class="icon">◈</div>
-          <h3>Control layer</h3>
-          <p>Use glass surfaces, subtle glows, precision spacing, and dark depth to feel enterprise-grade and premium.</p>
-        </article>
-      </div>
-    </section>
+      <section id="principles">
+        <div class="section-title">
+          <h2>Built on Infrastructure Principles</h2>
+          <p>Infrastructure is not visible to users, but everything depends on it. Our approach focuses on creating systems that are dependable, connected, and built to scale.</p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <h3>Foundation</h3>
+            <p>Every system starts with a stable base that supports all operations without failure.</p>
+          </div>
+          <div class="principle">
+            <h3>Interconnection</h3>
+            <p>Systems are designed to communicate seamlessly, ensuring efficient data flow and integration.</p>
+          </div>
+          <div class="principle">
+            <h3>Scalability</h3>
+            <p>Infrastructure is built to handle growth, adapting to increased demand without loss of performance.</p>
+          </div>
+        </div>
+      </section>
 
-    <section id="concept">
-      <div class="section-title">
-        <h2>The concept behind the background</h2>
-        <p>The best infrastructure design usually combines three ideas: physical structure, digital network, and operational trust.</p>
-      </div>
-
-      <div class="concept">
-        <div class="concept-box">
-          <div class="tag">Visual direction</div>
-          <h3>Premium infrastructure background</h3>
+      <section id="why">
+        <div class="section-title">
+          <h2>Why Cyron</h2>
+          <p>We approach infrastructure as a core system, not an afterthought. Our focus is on building environments that are structured, maintainable, and ready for real-world usage.</p>
+        </div>
+        <div class="diff-list">
+          <p>We prioritize:</p>
           <ul>
-            <li>Dark navy base for authority and focus</li>
-            <li>Fine grid overlay for engineering precision</li>
-            <li>Soft cyan and electric blue glows for modern tech energy</li>
-            <li>Glass panels for enterprise polish</li>
-            <li>Geometric C motif for strong brand recall</li>
+            <li>Clean and scalable system design</li>
+            <li>Reliable performance under load</li>
+            <li>Long-term maintainability</li>
+            <li>Clear architecture and control</li>
           </ul>
         </div>
+      </section>
 
-        <div class="concept-box">
-          <div class="tag">Brand meaning</div>
-          <h3>What “infrastructure” should communicate</h3>
-          <div class="timeline">
-            <div class="step">
-              <div class="badge">01</div>
-              <div>
-                <h4>Foundation</h4>
-                <p>The company stands for stability, like a base layer that everything else depends on.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="badge">02</div>
-              <div>
-                <h4>Interconnection</h4>
-                <p>Systems should feel linked, like power, data, buildings, or services working as one network.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="badge">03</div>
-              <div>
-                <h4>Scale</h4>
-                <p>The look should suggest growth, expansion, resilience, and readiness for enterprise projects.</p>
-              </div>
-            </div>
-          </div>
+      <section id="contact">
+        <div class="cta-block">
+          <h2>Build on a stronger foundation.</h2>
+          <p>Whether you are launching a new system or improving an existing one, Cyron provides the infrastructure required to support it.</p>
+          <a class="btn btn-primary" href="mailto:hello@cyron.com">Start a Project</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact">
-      <div class="cta">
-        <div>
-          <h2>Ready for a sharper version of Cyron.</h2>
-          <p>Replace the brand mark with your official geometric logo image, or keep this text mark until the final logo file is ready. The entire page is built as a clean GitHub Pages starter.</p>
-        </div>
-        <a class="btn btn-primary" href="mailto:hello@cyron.com">Contact Cyron</a>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Cyron. Infrastructure by design.
-    </footer>
+      <footer>
+        © <span id="year"></span> Cyron. Infrastructure by design.
+      </footer>
+    </div>
   </main>
 
   <script>
